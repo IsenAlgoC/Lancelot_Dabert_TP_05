@@ -74,7 +74,7 @@ int setElement(TABLEAU* tab, int pos, int element)
 		*(tab->elt + pos) = element; // on ecrit l'element a la position voulu, maintenant que l'on sait qu elle existe necessairement
 		return pos; // on retourne alors la position
 	}
-	else return 0; // si elt est un pointeur null on retourne -1
+	else return 0; // si elt est un pointeur null on retourne 0
 }
 
 int displayElements(TABLEAU* tab, int startPos, int endPos)
