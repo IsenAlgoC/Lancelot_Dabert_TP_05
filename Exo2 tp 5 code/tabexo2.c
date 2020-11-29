@@ -6,7 +6,7 @@
 #define TAILLEINITIALE 100
 
 
-TABLEAU newArray();
+TABLEAU newArray();                     // declarations des fonctions
 int initTab(int* tab, int size);
 int incrementArraySize(TABLEAU* tab, int incrementValue);
 int setElement(TABLEAU* tab, int pos, int element);
@@ -15,7 +15,7 @@ int displayElements(TABLEAU* tab, int startPos, int endPos);
 
 main()
 {
-	TABLEAU tab;
+	TABLEAU tab; // tests des fonctions
 	tab = newArray();
 	incrementArraySize(&tab, 12);
 	setElement( &tab, 46,12);
