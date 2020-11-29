@@ -3,20 +3,20 @@
 
 typedef struct Tableau {
 	int* elt;      //le tableau d'entiers
-	int size;      // la taille de ce tableau d’entiers
-	int eltsCount; // le nombre d’elements dans le tableau
+	int size;      // la taille de ce tableau dâ€™entiers
+	int eltsCount; // le nombre dâ€™elements dans le tableau
 } TABLEAU;
 
 #define TAILLEINITIALE 100
 
 int initTab(int* tab, int size)						// fonction qui remplit un tableau de taille size avec des zeros
 {
-	if ((tab == NULL) || (size <= 0)) { return -1; } // retourne -1 si tab est un pointeur NULL ou si size est négeatif ou nul
+	if ((tab == NULL) || (size <= 0)) { return -1; } // retourne -1 si tab est un pointeur NULL ou si size est nÃ©geatif ou nul
 	else
 	{
 		for (int i = 0; i < size; i++)				// boucle de remplissage
 		{
-			*(tab + i) = 0;							// donne la valeur 0 a l'adresse numero i du tableau par déréférence 
+			*(tab + i) = 0;							// donne la valeur 0 a l'adresse numero i du tableau par dÃ©rÃ©fÃ©rence 
 		}
 		return size;								// retourne size car tout va bien
 	}
@@ -47,7 +47,7 @@ int incrementArraySize(TABLEAU* tab, int incrementValue)
 		if (tmp != NULL)
 		{
 		tab->elt = tmp;  // si la reallocation marche  on modifie la taille du tableau
-		tab->size += incrementValue; // et on met a jour la taille indiquée
+		tab->size += incrementValue; // et on met a jour la taille indiquÃ©e
 
 		return tab->size; // on renvoire alors la nouvelle taille 
 	}
@@ -79,18 +79,18 @@ int setElement(TABLEAU* tab, int pos, int element)
 
 int displayElements(TABLEAU* tab, int startPos, int endPos)
 {
-	if( (tab->elt != NULL) && (0<=startPos<tab->size) && (0 <= endPos < tab->size))
+	if( (tab->elt != NULL) && (0<=startPos<tab->size) && (0 <= endPos < tab->size)) // on verifie que le pointeur elt ne soit pas null, et que startPos et endPos soient valides
 	{
-		if (startPos <endPos)
+		if (startPos <endPos)  // cas classique ou on affiche les valeurs dans l ordre croissant entre startPos et endPos
 		{ 
-			for (int i =startPos; i< endPos, i ++;)
+			for (int i =startPos; i< endPos, i ++;) 
 			{printf_s("%d",*(tab->elt + i));}
 		}
 
-		if (startPos = endPos)
+		if (startPos = endPos) // si egalitÃ© on affiche un seul element
 		{ printf_s("%d", *(tab->elt + startPos)); }
 
-		if (startPos > endPos)
+		if (startPos > endPos) // ici on inverse startPos et endPos par rapport au 1er cas
 		{
 			for (int i = endPos; i <= startPos, i++;)
 			{ {printf_s("%d", *(tab->elt + i)); }
@@ -98,6 +98,7 @@ int displayElements(TABLEAU* tab, int startPos, int endPos)
 			}
 
 		}
+	return 0; // on retourne 0 si tout est ok	
 	}
-	else return -1;
+	else return -1; // si erreur on retourne -1
 }
